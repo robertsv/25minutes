@@ -1,0 +1,24 @@
+.task-list__header {
+  color: dimgray;
+}
+
+.task-list__item {
+  font-size: 1.7rem;
+  color: dimgray;
+  text-transform: capitalize;
+}
+
+.task-list__item-name {
+  font-size: 1.1rem;
+  word-break: break-word;
+}
+
+.task-list__item-action {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.task-list__item-action:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

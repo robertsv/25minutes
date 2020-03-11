@@ -1,0 +1,133 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="countdown__timer" [ngClass]="{'countdown__timer--work': mode === 0, 'countdown__timer--break': mode === 1}">
+        {{ timeLeft * 1000 | date:'mm:ss' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2 d-none d-sm-block">
+    <div class="col-12">
+      <div class="float-left">
+        <span class="countdown__about-link" (click)="scrollToAbout()">About!</span>
+      </div>
+      <div class="float-right">
+        <button type="button" class="btn btn-outline-info btn-sm countdown__setup-btn"
+                (click)="openCountDownSetupDialog()"
+                [disabled]="running">
+          Different time
+        </button>
+        <span class="ml-1">
+          <button type="button" class="btn btn-outline-dark btn-sm countdown__setup-btn"
+                  (click)="showHideTaskList()">
+            {{ showTaskList ? "Hide" : "Show"}} task list
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2 mt-sm-5">
+    <div class="col-12">
+      <span>
+        <button class="btn btn-primary btn-info btn-block countdown__start-btn mx-auto" (click)="startStop()">
+          {{ running ? "Pause" : "Start" }}
+          {{ mode === 0 ? " work" : " break" }}
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-12">
+      <span>
+        <div class="countdown__reset-link mx-auto" [style.visibility]="wasStarted() ? 'visible' : 'hidden'" (click)="resetTimer()">Reset</div>
+      </span>
+    </div>
+  </div>
+
+  <div class="row mt-2 d-sm-none d-block">
+    <div class="col-12">
+      <button type="button" class="btn btn-outline-info btn-block"
+              (click)="openCountDownSetupDialog()"
+              [disabled]="running">
+        Different time
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-2 d-sm-none d-block">
+    <div class="col-12">
+      <button type="button" class="btn btn-outline-dark btn-block"
+              (click)="showHideTaskList()">
+        {{ showTaskList ? "Hide" : "Show"}} task list
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal fade" #dialog id="countdown-setup-dialog" tabindex="-1" role="dialog" aria-labelledby="countdown-setup-dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form (ngSubmit)="saveConfiguration(formRef)" #formRef="ngForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Set time that you will work</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="new-work-duration" class="col-2 col-form-label">Work</label>
+            <div class="col-5">
+              <input class="form-control"
+                     type="number"
+                     #workDurationRef=ngModel
+                     [(ngModel)]="workDurationMinEdit"
+                     required
+                     min="1"
+                     max="60"
+                     id="new-work-duration"
+                     name="workDuration"
+                     [ngClass]="{'is-invalid': workDurationRef.invalid && workDurationRef.touched}"
+                     (keydown.enter)="saveConfiguration(formRef)">
+            </div>
+            <div class="col-5">
+              <small class="form-text text-danger" *ngIf="workDurationRef.invalid && workDurationRef.touched">
+                Please enter valid value from 1 to 60 minutes.
+              </small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="new-break-duration" class="col-2 col-form-label">Break</label>
+            <div class="col-5">
+              <input class="form-control"
+                     type="number"
+                     #breakDurationRef=ngModel
+                     [(ngModel)]="breakDurationMinEdit"
+                     required
+                     min="1"
+                     max="60"
+                     id="new-break-duration"
+                     name="breakDuration"
+                     [ngClass]="{'is-invalid': breakDurationRef.invalid && breakDurationRef.touched}"
+                     (keydown.enter)="saveConfiguration(formRef)">
+            </div>
+            <div class="col-5">
+              <small class="form-text text-danger" *ngIf="breakDurationRef.invalid && breakDurationRef.touched">
+                Please enter valid value from 1 to 60 minutes.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-outline-success">Ok</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

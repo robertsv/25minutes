@@ -1,0 +1,90 @@
+@import 'https://fonts.googleapis.com/css?family=Nova+Mono|Eczar';
+
+.countdown__timer {
+  font-family: 'Nova Mono', monospace;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 25px;
+  border: 5px solid #17a2b8;
+  text-align: center;
+  color: #17a2b8;
+}
+
+.countdown__timer--work {
+  color: #c1666b;
+}
+
+.countdown__timer--break {
+  color: #7dcfb6;
+}
+
+@media (min-width: 576px) {
+  .countdown__timer {
+    font-size: 8rem;
+    height: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .countdown__timer {
+    font-size: 6rem;
+  }
+}
+
+.countdown__about-link {
+  font-size: 1rem;
+  color: grey;
+}
+
+.countdown__about-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.countdown__reset-link {
+  font-size: 1rem;
+  color: grey;
+}
+
+.countdown__reset-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 576px) {
+  .countdown__start-btn {
+    width: 325px;
+  }
+  .countdown__reset-link {
+    width: 325px;
+  }
+}
+
+@media (max-width: 575px) {
+  .countdown__start-btn {
+    width: 100%;
+  }
+}
+
+.countdown__setup-btn {
+  width: 110px;
+}
+
+.countdown__setup-btn:disabled {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* adjustments for bootstrap */
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+.container {
+  min-width: 360px;
+  max-width: 800px;
+}

@@ -1,0 +1,12 @@
+/* adjustments for bootstrap */
+.container {
+  max-width: 800px;
+}
+
+/*TODO (RV): make it better ?*/
+.container-fluid {
+  /*margin-top: 100px;*/
+  color: dimgray;
+}
+
+

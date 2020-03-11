@@ -1,0 +1,18 @@
+<div class="container p-0">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
+        <div class="form-group">
+          <input type="text" class="form-control" id="task" placeholder="Write here task description" name="task" ngModel required
+                 [ngClass]="{'is-invalid': taskRef.invalid && taskRef.touched && submittedInvalid}" #taskRef="ngModel">
+          <small class="form-text text-danger" *ngIf="taskRef.invalid && submittedInvalid">
+            Please enter task name!
+          </small>
+        </div>
+        <button type="submit" class="btn btn-outline-info btn-block task-submit-btn mx-auto">
+          Add task!
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

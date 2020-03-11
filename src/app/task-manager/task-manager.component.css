@@ -1,0 +1,16 @@
+@media (min-width: 576px) {
+  .task-submit-btn {
+    width: 200px
+  }
+}
+
+@media (max-width: 575px) {
+  .task-submit-btn {
+    width: 100%;
+  }
+}
+
+/* style Angular input field error state */
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
