@@ -8,6 +8,7 @@ import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { MinValidatorDirective } from './shared/min-validator.directive';
 import { MaxValidatorDirective } from './shared/max-validator.directive';
+import { MinutesSecondsPipe } from './shared/minutes-seconds.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MaxValidatorDirective } from './shared/max-validator.directive';
     TaskManagerComponent,
     TaskListComponent,
     MinValidatorDirective,
-    MaxValidatorDirective
+    MaxValidatorDirective,
+    MinutesSecondsPipe
   ],
   imports: [
     BrowserModule,

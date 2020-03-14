@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12">
       <div class="countdown__timer" [ngClass]="{'countdown__timer--work': mode === 0, 'countdown__timer--break': mode === 1}">
-        {{ timeLeft * 1000 | date:'mm:ss' }}
+        {{ timeLeft | minutesSeconds }}
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@
                      [(ngModel)]="workDurationMinEdit"
                      required
                      min="1"
-                     max="60"
+                     max="180"
                      id="new-work-duration"
                      name="workDuration"
                      [ngClass]="{'is-invalid': workDurationRef.invalid && workDurationRef.touched}"
@@ -97,7 +97,7 @@
             </div>
             <div class="col-5">
               <small class="form-text text-danger" *ngIf="workDurationRef.invalid && workDurationRef.touched">
-                Please enter valid value from 1 to 60 minutes.
+                Please enter valid value from 1 to 180 minutes.
               </small>
             </div>
           </div>
@@ -110,7 +110,7 @@
                      [(ngModel)]="breakDurationMinEdit"
                      required
                      min="1"
-                     max="60"
+                     max="180"
                      id="new-break-duration"
                      name="breakDuration"
                      [ngClass]="{'is-invalid': breakDurationRef.invalid && breakDurationRef.touched}"
@@ -118,7 +118,7 @@
             </div>
             <div class="col-5">
               <small class="form-text text-danger" *ngIf="breakDurationRef.invalid && breakDurationRef.touched">
-                Please enter valid value from 1 to 60 minutes.
+                Please enter valid value from 1 to 180 minutes.
               </small>
             </div>
           </div>
