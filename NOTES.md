@@ -17,6 +17,8 @@ ng generate pipe shared/minutes-seconds
 
 ng build --prod="true"
 
+ng build --base-href https://robertsv.github.io/25minutes/
+
 
 https://coolors.co/f79256-17a2b8-fbd1a2-7dcfb6-c1666b
 https://www.zapsplat.com/sound-effect-category/small-bells/
