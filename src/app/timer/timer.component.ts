@@ -41,9 +41,7 @@ export class TimerComponent implements OnInit {
   }
 
   ngOnInit() {
-    // TODO (RV): default is 25 * 60
     this.workDurationSec = this.storageService.loadWorkDurationFromStorage() || 25 * 60;
-    // TODO (RV): default is 5 * 60
     this.breakDurationSec = this.storageService.loadBreakDurationFromStorage() || 5 * 60;
     this.showTaskList = this.storageService.loadShowHideTaskListFromStorage();
     this.showHideTaskSection.emit(this.showTaskList);

@@ -14,13 +14,6 @@ export class AppComponent implements OnInit {
     this.taskSectionIsVisible = showTaskList;
   }
 
-  // TODO (RV): delete
-  // @HostListener('window:resize', ['$event'])
-  // getScreenSize() {
-  //   this.screenHeight = window.innerHeight;
-  //   console.log(this.screenHeight);
-  // }
-
   ngOnInit(): void {
     this.screenHeight = window.innerHeight;
   }
