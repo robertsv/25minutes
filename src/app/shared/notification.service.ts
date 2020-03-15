@@ -6,18 +6,27 @@ import {Injectable} from '@angular/core';
 export class NotificationService {
 
   sendNotification(title: string, message: string) {
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission().then(r => {
+    try {
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission().then(r => {
+        });
+      }
+
+      const notification = new Notification(title, {
+        body: message,
       });
+
+      setTimeout(() => {
+        try {
+          notification.close();
+        } catch (e) {
+          // notification sending failed
+        }
+      }, 4000);
+
+    } catch (e) {
+      // notification sending failed
     }
-
-    const notification = new Notification(title, {
-      body: message,
-    });
-
-    setTimeout(() => {
-      notification.close();
-    }, 4000);
   }
 
 }

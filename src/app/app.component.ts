@@ -8,7 +8,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'pomodoro-timer';
   taskSectionIsVisible = true;
-  private screenHeight: number;
+  screenHeight: number;
 
   showHideTaskSection(showTaskList: boolean) {
     this.taskSectionIsVisible = showTaskList;

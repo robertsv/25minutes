@@ -23,16 +23,16 @@ export class TimerComponent implements OnInit {
   @Output() showHideTaskSection = new EventEmitter<boolean>();
   @ViewChild('dialog', {static: false}) dialog: ElementRef;
 
-  private showTaskList = true;
+  showTaskList = true;
   private cntDownInterval = interval(1000);
   private cntDownSub: Subscription;
-  private running = false;
-  private mode = Mode.Work;
+  running = false;
+  mode = Mode.Work;
   private workDurationSec;
   private breakDurationSec;
-  private workDurationMinEdit;
-  private breakDurationMinEdit;
-  private timeLeft;
+  workDurationMinEdit;
+  breakDurationMinEdit;
+  timeLeft;
 
   constructor(private notificationService: NotificationService,
               private storageService: StorageService,
@@ -49,7 +49,7 @@ export class TimerComponent implements OnInit {
     this.updateTitle();
   }
 
-  private startStop() {
+  startStop() {
     if (!this.running) {
       this.start();
     } else {
@@ -73,7 +73,7 @@ export class TimerComponent implements OnInit {
     this.cntDownSub.unsubscribe();
   }
 
-  private resetTimer() {
+  resetTimer() {
     this.stop();
     this.resetLeftTime();
   }
@@ -126,11 +126,11 @@ export class TimerComponent implements OnInit {
     }
   }
 
-  private wasStarted(): boolean {
+  wasStarted(): boolean {
     return this.timeLeft !== this.getDuration();
   }
 
-  private openCountDownSetupDialog() {
+  openCountDownSetupDialog() {
     this.workDurationMinEdit = this.workDurationSec / 60;
     this.breakDurationMinEdit = this.breakDurationSec / 60;
     $(this.dialog.nativeElement).modal('show');
@@ -140,19 +140,19 @@ export class TimerComponent implements OnInit {
     $(this.dialog.nativeElement).modal('hide');
   }
 
-  private showHideTaskList() {
+  showHideTaskList() {
     this.showTaskList = !this.showTaskList;
     this.storageService.saveShowHideTaskListInStorage(this.showTaskList);
     this.showHideTaskSection.emit(this.showTaskList);
   }
 
-  private scrollToAbout() {
+  scrollToAbout() {
     setTimeout(() =>
         this.aboutSection.scrollIntoView({behavior: 'smooth'})
       , 0);
   }
 
-  private saveConfiguration(form: NgForm) {
+  saveConfiguration(form: NgForm) {
     if (form.valid) {
       this.workDurationSec = this.workDurationMinEdit * 60;
       this.breakDurationSec = this.breakDurationMinEdit * 60;

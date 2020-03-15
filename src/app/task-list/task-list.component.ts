@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent implements OnInit, OnDestroy {
-  private tasks: Task[];
+  tasks: Task[];
   private subscription: Subscription;
 
   constructor(private dataService: DataService) {

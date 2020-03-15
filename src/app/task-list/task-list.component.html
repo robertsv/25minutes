@@ -4,8 +4,8 @@
       <h2 class="text-center task-list__header">Tasks</h2>
     </div>
   </div>
-  <div class="row task-list__item" *ngFor="let task of tasks; let i = index; let showActions = false;">
-    <div class="col-10 mx-auto" (mouseover)="showActions = true" (mouseout)="showActions = false">
+  <div class="row task-list__item"  *ngFor="let task of tasks; let i = index;">
+    <div class="col-10 mx-auto" (mouseover)="task.showActions = true" (mouseout)="task.showActions = false">
       <div class="container m-0 ">
         <div class="row">
           <div class="col-1">
@@ -15,7 +15,7 @@
           <div class="col-9">
             <span class="task-list__item-name" [ngStyle]="{'text-decoration': task.checked ? 'line-through ': 'none'}">{{ task.name }}</span>
           </div>
-          <div class="col-2" [hidden]="!showActions">
+          <div class="col-2" [hidden]="!task.showActions">
             <span class="task-list__item-action" (click)="checkOrUncheck(i)">{{ task.checked ? 'Undone' : 'Done'  }}</span>
             <span class="task-list__item-action ml-1 mr-1">|</span>
             <span class="task-list__item-action" (click)="delete(i)">Delete</span>

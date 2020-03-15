@@ -20,7 +20,7 @@ export class DataService {
   }
 
   addTask(taskName: string) {
-    this.tasks.push(new Task(taskName, false));
+    this.tasks.push(new Task(taskName, false, false));
     this.storageService.saveTasksInStorage(this.tasks);
     this.tasksSource.next(this.tasks);
   }

@@ -8,7 +8,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./task-manager.component.css']
 })
 export class TaskManagerComponent implements OnInit {
-  private submittedInvalid: boolean;
+  submittedInvalid: boolean;
 
   constructor(private dataService: DataService) {
   }
