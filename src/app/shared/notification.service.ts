@@ -24,7 +24,7 @@ export class NotificationService {
 
   requestPermission() {
     if (!('Notification' in window)) {
-      alert('This browser does not support desktop notification');
+      // this browser does not support desktop notification
     } else if (Notification.permission !== 'denied') {
       Notification.requestPermission().then(r => {
       });
