@@ -58,6 +58,7 @@ export class TimerComponent implements OnInit {
   }
 
   private start() {
+    this.notificationService.requestPermission();
     this.running = true;
     this.cntDownSub = this.cntDownInterval.subscribe(val => {
       this.timeLeft--;

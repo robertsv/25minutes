@@ -6,12 +6,7 @@ import {Injectable} from '@angular/core';
 export class NotificationService {
 
   sendNotification(title: string, message: string) {
-    try {
-      if (Notification.permission !== 'granted') {
-        Notification.requestPermission().then(r => {
-        });
-      }
-
+    if (Notification.permission === 'granted') {
       const notification = new Notification(title, {
         body: message,
       });
@@ -23,10 +18,16 @@ export class NotificationService {
           // notification sending failed
         }
       }, 4000);
-
-    } catch (e) {
-      // notification sending failed
     }
   }
 
+
+  requestPermission() {
+    if (!('Notification' in window)) {
+      alert('This browser does not support desktop notification');
+    } else if (Notification.permission !== 'denied') {
+      Notification.requestPermission().then(r => {
+      });
+    }
+  }
 }
