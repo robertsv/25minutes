@@ -92,7 +92,7 @@
         <div class="modal-body">
           <div class="form-group row">
             <label for="new-work-duration" class="col-2 col-form-label">Work</label>
-            <div class="col-5">
+            <div class="col-sm-5">
               <input class="form-control"
                      type="number"
                      #workDurationRef=ngModel
@@ -105,7 +105,9 @@
                      [ngClass]="{'is-invalid': workDurationRef.invalid && workDurationRef.touched}"
                      (keydown.enter)="saveConfiguration(formRef)">
             </div>
-            <div class="col-5">
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-5">
               <small class="form-text text-danger" *ngIf="workDurationRef.invalid && workDurationRef.touched">
                 Please enter valid value from 1 to 180 minutes.
               </small>
@@ -113,7 +115,7 @@
           </div>
           <div class="form-group row">
             <label for="new-break-duration" class="col-2 col-form-label">Break</label>
-            <div class="col-5">
+            <div class="col-sm-5">
               <input class="form-control"
                      type="number"
                      #breakDurationRef=ngModel
@@ -126,7 +128,9 @@
                      [ngClass]="{'is-invalid': breakDurationRef.invalid && breakDurationRef.touched}"
                      (keydown.enter)="saveConfiguration(formRef)">
             </div>
-            <div class="col-5">
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-5">
               <small class="form-text text-danger" *ngIf="breakDurationRef.invalid && breakDurationRef.touched">
                 Please enter valid value from 1 to 180 minutes.
               </small>
@@ -134,8 +138,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-outline-success">Ok</button>
+          <button type="button" class="btn btn-outline-warning btn-block" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-outline-success btn-block">Ok</button>
         </div>
       </form>
     </div>
