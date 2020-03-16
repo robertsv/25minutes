@@ -1,27 +1,47 @@
-# TwentyFiveMinutes
+# 25minutes
+This is a source of 25minut.es
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+[![Analytics](https://ga-beacon.appspot.com/UA-54543878-3/robertsv/25minutes)]()
+
+## About
+
+This project is Angular 8 learning continuation. 
+
+It started very small w/ any intention to publish but some how it grow and here (https://25minut.es) it is. 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build --prod --output-path docs --base-href https://25minut.es --verbose=true` to build the project.
 
-## Running unit tests
+The build artifacts will be stored in the `docs/` directory.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Notes
 
-## Running end-to-end tests
+```
+ng new --commit=false --directory=.  twenty-five-minutes
+npm install --save @fortawesome/fontawesome-free@5.1.0-9
+npm install --save bootstrap@4.4.1
+npm install --save jquery@3.4.1
+npm install --save-dev @types/jquery@3.x
+npm install --save-dev @types/bootstrap@4.x
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+ng generate component timer
+ng generate component task-manager
+ng generate component task-list
+ng generate service shared/data
+ng generate service shared/notification
+ng generate service shared/storage
+ng generate directive shared/min-validator
+ng generate directive shared/max-validator
+ng generate pipe shared/minutes-seconds
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Color scheme https://coolors.co/f79256-17a2b8-fbd1a2-7dcfb6-c1666b
+* Sound: https://www.zapsplat.com/sound-effect-category/small-bells/
+* Favicon: https://www.favicon-generator.org
