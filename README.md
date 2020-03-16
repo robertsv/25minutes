@@ -5,15 +5,13 @@ This is a source of 25minut.es
 
 ## About
 
-This project is Angular 8 learning continuation. 
+This project is my learning continuation of Angular 8. 
 
-It started very small w/ any intention to publish but some how it grow and here (https://25minut.es) it is. 
+It started very small w/ any intention to publish but somehow it grow and here (https://25minut.es) it is. 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-
-The app will automatically reload if you change any of the source files.
 
 ## Build
 
