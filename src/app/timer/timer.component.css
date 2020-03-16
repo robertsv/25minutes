@@ -27,7 +27,7 @@
 
 @media (max-width: 575px) {
   .countdown__timer {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
@@ -51,21 +51,6 @@
   text-decoration: none;
 }
 
-@media (min-width: 576px) {
-  .countdown__start-btn {
-    width: 325px;
-  }
-  .countdown__reset-link {
-    width: 325px;
-  }
-}
-
-@media (max-width: 575px) {
-  .countdown__start-btn {
-    width: 100%;
-  }
-}
-
 .countdown__setup-btn {
   width: 110px;
 }
@@ -85,6 +70,6 @@
 }
 
 .container {
-  min-width: 360px;
+  min-width: 300px;
   max-width: 800px;
 }
