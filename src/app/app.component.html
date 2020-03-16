@@ -1,4 +1,4 @@
-<div class="container" [style.height.px]="screenHeight">
+<div class="container" [style.min-height.px]="screenHeight">
   <div class="row">
     <div class="col-12 mt-5">
       <app-timer [aboutSection]="aboutSection" (showHideTaskSection)="showHideTaskSection($event)"></app-timer>
@@ -10,7 +10,7 @@
       <app-task-list></app-task-list>
     </div>
   </div>
-  <div class="row mt-5" [hidden]="!taskSectionIsVisible">
+  <div class="row mt-5 task-list" [hidden]="!taskSectionIsVisible">
     <div class="col-12">
       <app-task-manager></app-task-manager>
     </div>
