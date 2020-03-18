@@ -40,6 +40,6 @@ ng generate directive shared/max-validator
 ng generate pipe shared/minutes-seconds
 ```
 
-* Color scheme https://coolors.co/f79256-17a2b8-fbd1a2-7dcfb6-c1666b
+* Color scheme: https://coolors.co/f79256-17a2b8-fbd1a2-7dcfb6-c1666b
 * Sound: https://www.zapsplat.com/sound-effect-category/small-bells/
 * Favicon: https://www.favicon-generator.org
