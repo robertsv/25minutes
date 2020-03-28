@@ -2,6 +2,7 @@ import {Directive, Input} from '@angular/core';
 import {NG_VALIDATORS, FormControl, Validator} from '@angular/forms';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[min]',
   providers: [
     {provide: NG_VALIDATORS, useExisting: MinValidatorDirective, multi: true}

@@ -16,6 +16,7 @@ describe('DataService', () => {
     });
     // storageServiceSpy.loadTasksStorage = () => [new Task('Test task1', false, false)];
     TestBed.configureTestingModule({
+      declarations: [],
       providers: [DataService,
         {provide: StorageService, useValue: storageServiceSpy}
       ]
