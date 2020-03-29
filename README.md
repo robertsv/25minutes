@@ -22,6 +22,7 @@ The build artifacts will be stored in the `docs/` directory.
 ## Tests
 
 Run `ng test` to run all unit tests.
+
 Run `ng test --include=src/app/shared/data.service.spec.ts` to run individual test (`data.service.spec.ts`).
 
 ## Notes
