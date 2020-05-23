@@ -46,4 +46,4 @@ ng generate pipe shared/minutes-seconds
 ```
 
 * Sound effects obtained from https://www.zapsplat.com
-* Favicon: https://www.favicon-generator.org
+* Favicon from https://www.favicon-generator.org
