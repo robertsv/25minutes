@@ -5,6 +5,9 @@
 .task-list__item {
   font-size: 1.7rem;
   color: dimgray;
+}
+
+.task-list__item::first-letter {
   text-transform: capitalize;
 }
 

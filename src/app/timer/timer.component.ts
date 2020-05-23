@@ -46,7 +46,7 @@ export class TimerComponent implements OnInit {
     this.showTaskList = this.storageService.loadShowHideTaskListFromStorage();
     this.showHideTaskSection.emit(this.showTaskList);
     this.timeLeft = this.workDurationSec;
-    this.updateTitle();
+    // this.updateTitle();
   }
 
   startStop() {
@@ -72,6 +72,7 @@ export class TimerComponent implements OnInit {
   private stop() {
     this.running = false;
     this.cntDownSub.unsubscribe();
+    this.resetTitle();
   }
 
   resetTimer() {
@@ -84,6 +85,7 @@ export class TimerComponent implements OnInit {
     this.cntDownSub.unsubscribe();
     this.flipMode();
     this.resetLeftTime();
+    this.resetTitle();
   }
 
   private timeIsOut() {
@@ -92,6 +94,7 @@ export class TimerComponent implements OnInit {
     this.sendNotification();
     this.flipMode();
     this.resetLeftTime();
+    this.resetTitle();
     const audio = new Audio();
     audio.src = 'assets/zapsplat_bell_small_hand_ring_short_012_39329.mp3';
     audio.load();
@@ -116,7 +119,7 @@ export class TimerComponent implements OnInit {
     } else {
       this.timeLeft = this.breakDurationSec;
     }
-    this.updateTitle();
+    this.resetTitle();
   }
 
   private flipMode() {
@@ -178,6 +181,10 @@ export class TimerComponent implements OnInit {
 
   private updateTitle() {
     this.title.setTitle(this.datePipe.transform(this.timeLeft * 1000, 'mm:ss'));
+  }
+
+  private resetTitle() {
+    this.title.setTitle('25minutes');
   }
 
 }
