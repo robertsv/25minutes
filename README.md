@@ -45,5 +45,5 @@ ng generate directive shared/max-validator
 ng generate pipe shared/minutes-seconds
 ```
 
-* Sound: https://www.zapsplat.com
+* Sound effects obtained from https://www.zapsplat.com
 * Favicon: https://www.favicon-generator.org
