@@ -79,6 +79,13 @@ export class TimerComponent implements OnInit {
     this.resetLeftTime();
   }
 
+  skipSession() {
+    this.running = false;
+    this.cntDownSub.unsubscribe();
+    this.flipMode();
+    this.resetLeftTime();
+  }
+
   private timeIsOut() {
     this.running = false;
     this.cntDownSub.unsubscribe();
@@ -89,6 +96,7 @@ export class TimerComponent implements OnInit {
     audio.src = 'assets/zapsplat_bell_small_hand_ring_short_012_39329.mp3';
     audio.load();
     audio.play();
+    // start next session after some time so that sound is played
     setTimeout(() => {
       this.startStop();
     }, 1000);

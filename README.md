@@ -4,10 +4,9 @@ This is a source of 25minut.es
 [![Analytics](https://ga-beacon.appspot.com/UA-54543878-3/robertsv/25minutes)]()
 
 ## About
+25minutes is a simple yet very powerful time tracking tool.
 
-This project is my learning continuation of Angular 8. 
-
-It started very small w/ any intention to publish but somehow it grow and here (https://25minut.es) it is. 
+Built with Angular 8 and Bootstrap 4.4. 
 
 ## Development server
 
